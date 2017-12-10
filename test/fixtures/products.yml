@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyString
+  category: one
+  price: 9.99
+  currency: one
+  supplier: one
+
+two:
+  name: MyString
+  desc: MyString
+  category: two
+  price: 9.99
+  currency: two
+  supplier: two
