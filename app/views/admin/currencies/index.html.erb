@@ -2,7 +2,7 @@
 
 <h1>Currencies</h1>
 
-<table>
+<table class="striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= currency.name %></td>
         <td><%= currency.code %></td>
-        <td><%= link_to 'Show', [:admin,currency] %></td>
-        <td><%= link_to 'Edit', edit_admin_currency_path(currency) %></td>
-        <td><%= link_to 'Destroy', [:admin,currency], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin,currency], class: "waves-effect waves-light btn"  %></td>
+        <td><%= link_to 'Edit', edit_admin_currency_path(currency), class: "waves-effect waves-light btn"  %></td>
+        <td><%= link_to 'Destroy', [:admin,currency], method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light btn" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Currency', new_admin_currency_path %>
+<%= link_to 'New Currency', new_admin_currency_path, class: "waves-effect waves-light btn"  %>

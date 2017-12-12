@@ -2,14 +2,31 @@
 <html>
   <head>
     <title>TestCaseProducts</title>
+
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-  admin
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"> ADMIN - Products</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%=link_to "Products", admin_root_path%></li>
+            <li><%=link_to "Categories", admin_categories_path%></li>
+            <li><%=link_to "Currencies", admin_currencies_path%></li>
+            <li><%=link_to "Suppliers", admin_suppliers_path%></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="row">
+      <div class="col s12"> 
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
