@@ -1,6 +1,13 @@
-<h1>Editing Product</h1>
+<div class="row">
+	<div class="col s6">
+		<%= link_to 'Show',[:admin, @product], class: "waves-effect waves-light btn" %> |
+		<%= link_to 'Back', admin_root_path, class: "waves-effect waves-light btn" %>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h1>Editing Product</h1>
+		<%= render 'form', product: @product %>
+	</div>
+</div>
 
-<%= render 'form', product: @product %>
-
-<%= link_to 'Show', [:admin, @product] %> |
-<%= link_to 'Back', admin_root_path %>
