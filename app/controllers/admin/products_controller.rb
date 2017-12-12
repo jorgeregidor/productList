@@ -1,13 +1,9 @@
 class Admin::ProductsController < Admin::BaseController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   # GET /
   def index
-    @products = Product.all.includes(:category,:currency,:supplier)
-  end
-
-  # GET admin/products/1
-  def show
+    @products = Product.order(updated_at: :desc).all.includes(:category,:currency,:supplier)
   end
 
   # GET admin/products/new
@@ -25,7 +21,7 @@ class Admin::ProductsController < Admin::BaseController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to [:admin, @product], notice: 'Product was successfully created.' }
+        format.html { redirect_to admin_root_url, notice: 'Product was successfully created.' }
       else
         format.html { render :new }
       end
@@ -36,7 +32,7 @@ class Admin::ProductsController < Admin::BaseController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to [:admin, @product], notice: 'Product was successfully updated.' }
+        format.html { redirect_to admin_root_url, notice: 'Product was successfully updated.' }
       else
         format.html { render :edit }
       end

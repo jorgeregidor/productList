@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 	root to: 'pages#home'
 
 	namespace :admin do
-  	resources :categories
-  	resources :currencies
-  	resources :suppliers
-  	resources :products, except: :index
+  	resources :categories, except: :show
+  	resources :currencies, except: :show
+  	resources :suppliers, except: :show
+  	resources :products, except:[:index,:show]
   	root to: 'products#index'
   end
 end
