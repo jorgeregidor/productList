@@ -1,13 +1,9 @@
 class Admin::CurrenciesController < Admin::BaseController
-  before_action :set_currency, only: [:show, :edit, :update, :destroy]
+  before_action :set_currency, only: [:edit, :update, :destroy]
 
   # GET admin/currencies
   def index
     @currencies = Currency.all
-  end
-
-  # GET admin/currencies/1
-  def show
   end
 
   # GET admin/currencies/new
@@ -25,7 +21,7 @@ class Admin::CurrenciesController < Admin::BaseController
 
     respond_to do |format|
       if @currency.save
-        format.html { redirect_to [:admin,@currency], notice: 'Currency was successfully created.' }
+        format.html { redirect_to admin_currencies_url, notice: 'Currency was successfully created.' }
       else
         format.html { render :new }
       end
@@ -36,7 +32,7 @@ class Admin::CurrenciesController < Admin::BaseController
   def update
     respond_to do |format|
       if @currency.update(currency_params)
-        format.html { redirect_to [:admin, @currency], notice: 'Currency was successfully updated.' }
+        format.html { redirect_to admin_currencies_url, notice: 'Currency was successfully updated.' }
       else
         format.html { render :edit }
       end

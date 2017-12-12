@@ -1,13 +1,9 @@
 class Admin::SuppliersController < Admin::BaseController
-  before_action :set_supplier, only: [:show, :edit, :update, :destroy]
+  before_action :set_supplier, only: [:edit, :update, :destroy]
 
   # GET admin/suppliers
   def index
     @suppliers = Supplier.all
-  end
-
-  # GET admin/suppliers/1
-  def show
   end
 
   # GET admin/suppliers/new
@@ -24,7 +20,7 @@ class Admin::SuppliersController < Admin::BaseController
     @supplier = Supplier.new(supplier_params)
     respond_to do |format|
       if @supplier.save
-        format.html { redirect_to [:admin, @supplier], notice: 'Supplier was successfully created.' }
+        format.html { redirect_to admin_suppliers_url, notice: 'Supplier was successfully created.' }
       else
         format.html { render :new }
       end
@@ -35,7 +31,7 @@ class Admin::SuppliersController < Admin::BaseController
   def update
     respond_to do |format|
       if @supplier.update(supplier_params)
-        format.html { redirect_to [:admin, @supplier], notice: 'Supplier was successfully updated.' }
+        format.html { redirect_to admin_suppliers_url, notice: 'Supplier was successfully updated.' }
       else
         format.html { render :edit }
       end

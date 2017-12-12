@@ -1,13 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:edit, :update, :destroy]
 
   # GET admin/categories
   def index
     @categories = Category.all
-  end
-
-  # GET admin/categories/1
-  def show
   end
 
   # GET admin/categories/new
@@ -25,7 +21,7 @@ class Admin::CategoriesController < Admin::BaseController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to [:admin, @category], notice: 'Category was successfully created.' }
+        format.html { redirect_to admin_categories_url, notice: 'Category was successfully created.' }
       else
         format.html { render :new }
       end
@@ -36,7 +32,7 @@ class Admin::CategoriesController < Admin::BaseController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to [:admin, @category], notice: 'Category was successfully updated.' }
+        format.html { redirect_to admin_categories_url, notice: 'Category was successfully updated.' }
       else
         format.html { render :edit }
       end
