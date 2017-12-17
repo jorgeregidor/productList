@@ -7,7 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Code</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -16,7 +16,6 @@
       <tr>
         <td><%= currency.name %></td>
         <td><%= currency.code %></td>
-        <td><%= link_to 'Show', [:admin,currency], class: "waves-effect waves-light btn"  %></td>
         <td><%= link_to 'Edit', edit_admin_currency_path(currency), class: "waves-effect waves-light btn"  %></td>
         <td><%= link_to 'Destroy', [:admin,currency], method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light btn" %></td>
       </tr>
