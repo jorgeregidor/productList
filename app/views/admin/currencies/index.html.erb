@@ -12,14 +12,7 @@
   </thead>
 
   <tbody>
-    <% @currencies.each do |currency| %>
-      <tr>
-        <td><%= currency.name %></td>
-        <td><%= currency.code %></td>
-        <td><%= link_to 'Edit', edit_admin_currency_path(currency), class: "waves-effect waves-light btn"  %></td>
-        <td><%= link_to 'Destroy', [:admin,currency], method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light btn" %></td>
-      </tr>
-    <% end %>
+    <%= render @currencies %>
   </tbody>
 </table>
 

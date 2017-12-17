@@ -1,0 +1,10 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.desc %></td>
+  <td><%= product.category_name %></td>
+  <td><%= product.price %></td>
+  <td><%= product.currency_name %></td>
+  <td><%= product.supplier_name %></td>
+  <td><%= link_to 'Edit', edit_admin_product_path(product), class: "waves-effect waves-light btn" %></td>
+  <td><%= link_to 'Destroy', [:admin, product], method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light btn" %></td>
+</tr>
