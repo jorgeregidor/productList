@@ -13,16 +13,7 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.desc %></td>
-        <td><%= product.category_name %></td>
-        <td><%= product.price %></td>
-        <td><%= product.currency_name %></td>
-        <td><%= product.supplier_name %></td>
-      </tr>
-    <% end %>
+    <%= render partial: "product", collection: @products %>
   </tbody>
 </table>
 

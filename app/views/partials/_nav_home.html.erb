@@ -1,0 +1,15 @@
+<nav>
+	<div class="nav-wrapper">
+	  <a href="#" class="brand-logo">Products</a>
+	  <ul id="nav-mobile" class="right hide-on-med-and-down">
+	    <% if current_user %>
+        <% if current_user.admin? %>
+          <li> <%=link_to "admin", admin_root_path %> </li>
+        <% end %>
+        <li> <%=link_to "logout", destroy_user_session_path, method: :delete %></li>           
+      <% else %>
+        <li> <%=link_to "login", new_user_session_path %> </li>
+      <% end %>
+	  </ul>
+	</div>
+</nav>

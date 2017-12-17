@@ -1,0 +1,5 @@
+<tr>
+  <td><%= supplier.name %></td>
+  <td><%= link_to 'Edit', edit_admin_supplier_path(supplier), class: "waves-effect waves-light btn"  %></td>
+  <td><%= link_to 'Destroy', [:admin, supplier], method: :delete, data: { confirm: 'Are you sure?' } , class: "waves-effect waves-light btn" %></td>
+</tr>
